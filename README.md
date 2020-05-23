@@ -1,4 +1,5 @@
-﻿# GyverLamp for Arduino 
+﻿![PROJECT_PHOTO](https://github.com/inser7/GyverLamp_for_Arduino/blob/master/proj_img.jpg)
+# GyverLamp for Arduino (fork for my 1 strip modification)
 
 GyverLamp for Arduino
 This is a lite version of AlexGyver firmware for arduino. 
@@ -23,5 +24,3 @@ Removed from the original:
 - 	adjusting the scale of effects by triple pressing and holding the button for the third press;
 - 	indication of brightness / speed / scale with a vertical strip of red / green / blue, respectively;
 
-
-fork for my 1 strip modification
