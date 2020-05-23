@@ -26,6 +26,7 @@ void buttonTick() {
 if (ONflag) {                 // если включено
   if (touch.isDouble()) {
     if (++currentMode >= MODE_AMOUNT) currentMode = 0;
+    Serial.println(currentMode);
     FastLED.setBrightness(modes[currentMode].brightness);
     loadingFlag = true;
     //settChanged = true;
@@ -73,13 +74,13 @@ if (ONflag) {                 // если включено
   }
 
   if (touch.isStep()) {
-//    Serial.print(numHold);
-//    Serial.print(" brightness:");
-//    Serial.print(modes[currentMode].brightness);
-//    Serial.print(" speed:");
-//    Serial.print(modes[currentMode].speed);
-//    Serial.print(" scale:");
-//    Serial.println(modes[currentMode].scale);
+    Serial.print(numHold);
+    Serial.print(" brightness:");
+    Serial.print(modes[currentMode].brightness);
+    Serial.print(" speed:");
+    Serial.print(modes[currentMode].speed);
+    Serial.print(" scale:");
+    Serial.println(modes[currentMode].scale);
     if (numHold != 0) numHold_Timer = millis(); loadingFlag = true;
     switch (numHold) {
       case 1:

@@ -7,9 +7,9 @@ void effectsTick() {
     if (ONflag && millis() - effTimer >= ((currentMode < 5 || currentMode > 13) ? modes[currentMode].speed : 50) ) {
       effTimer = millis();
       switch (currentMode) {
-        case 0: sparklesRoutine();
+        case 0: fillAll(CRGB::Green);
           break;
-        case 1: fireRoutine();
+        case 1: fillAll(CRGB::Red);
           break;
         case 2: rainbowVertical();
           break;
@@ -17,32 +17,31 @@ void effectsTick() {
           break;
         case 4: colorsRoutine();
           break;
-        case 5: madnessNoise();
+        case 5: fillAll(CRGB::MediumVioletRed);
           break;
-        case 6: cloudNoise();
+        case 6: fillAll(CRGB::Yellow);
           break;
-        case 7: lavaNoise();
+        case 7: fillAll(CRGB::LightYellow);
           break;
-        case 8: plasmaNoise();
+        case 8: fillAll(CRGB::HotPink);
           break;
-        case 9: rainbowNoise();
+        case 9: fillAll(CRGB::Indigo);
           break;
-        case 10: rainbowStripeNoise();
+        case 10: fillAll(CRGB::MediumTurquoise);
           break;
-        case 11: zebraNoise();
+        case 11: fillAll(CRGB::OrangeRed);
           break;
-        case 12: forestNoise();
+        case 12: fillAll(CRGB::LimeGreen);
           break;
-        case 13: oceanNoise();
+        case 13: fillAll(CRGB::Moccasin);
           break;
-        case 14: colorRoutine();
+        case 14: fillAll(CRGB::PowderBlue);
           break;
-        case 15: snowRoutine();
+        case 15: ColorCHSVLamp(192);
           break;
-        case 16: matrixRoutine();
+        case 16: fillAll(CRGB::OliveDrab);
           break;
-        case 17: whiteLamp();
-          //        case 17: lightersRoutine();
+        case 17: ColorCHSVLamp(224);
           break;
       }
       switch (numHold) {    // индикатор уровня яркости/скорости/масштаба

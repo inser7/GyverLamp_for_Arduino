@@ -1,16 +1,5 @@
 // ================================= ЭФФЕКТЫ ====================================
 
-// --------------------------------- конфетти ------------------------------------
-void sparklesRoutine() {
-  for (byte i = 0; i < modes[0].scale; i++) {
-    byte x = random(0, WIDTH);
-    byte y = random(0, HEIGHT);
-    if (getPixColorXY(x, y) == 0)
-      leds[getPixelNumber(x, y)] = CHSV(random(0, 255), 255, 255);
-  }
-  fader(70);
-}
-
 // функция плавного угасания цвета для всех пикселей
 void fader(byte step) {
   for (byte i = 0; i < WIDTH; i++) {
@@ -188,54 +177,11 @@ void colorRoutine() {
   }
 }
 
-// ------------------------------ снегопад 2.0 --------------------------------
-void snowRoutine() {
-  // сдвигаем всё вниз
-  for (byte x = 0; x < WIDTH; x++) {
-    for (byte y = 0; y < HEIGHT - 1; y++) {
-      drawPixelXY(x, y, getPixColorXY(x, y + 1));
-    }
-  }
-
-  for (byte x = 0; x < WIDTH; x++) {
-    // заполняем случайно верхнюю строку
-    // а также не даём двум блокам по вертикали вместе быть
-    if (getPixColorXY(x, HEIGHT - 2) == 0 && (random(0, modes[15].scale) == 0))
-      drawPixelXY(x, HEIGHT - 1, 0xE0FFFF - 0x101010 * random(0, 4));
-    else
-      drawPixelXY(x, HEIGHT - 1, 0x000000);
-  }
-}
-
-// ------------------------------ МАТРИЦА ------------------------------
-void matrixRoutine() {
-  for (byte x = 0; x < WIDTH; x++) {
-    // заполняем случайно верхнюю строку
-    uint32_t thisColor = getPixColorXY(x, HEIGHT - 1);
-    if (thisColor == 0)
-      drawPixelXY(x, HEIGHT - 1, 0x00FF00 * (random(0, modes[16].scale) == 0));
-    else if (thisColor < 0x002000)
-      drawPixelXY(x, HEIGHT - 1, 0);
-    else
-      drawPixelXY(x, HEIGHT - 1, thisColor - 0x002000);
-  }
-
-  // сдвигаем всё вниз
-  for (byte x = 0; x < WIDTH; x++) {
-    for (byte y = 0; y < HEIGHT - 1; y++) {
-      drawPixelXY(x, y, getPixColorXY(x, y + 1));
-    }
-  }
-}
 
 // ------------------------------ БЕЛАЯ ЛАМПА ------------------------------
-void whiteLamp() {
-  for (byte y = 0; y < (HEIGHT / 2); y++) {
-    CHSV color = CHSV(100, 1, constrain(modes[17].brightness - (long)modes[17].speed * modes[17].brightness / 255 * y / 2, 1, 255));
-    for (byte x = 0; x < WIDTH; x++) {
-      drawPixelXY(x, y + 8, color);
-      drawPixelXY(x, 7 - y, color);
-    }
+void ColorCHSVLamp(int color) {
+for (int i = 0; i < NUM_LEDS; i++) {
+    leds[i] = CHSV(color, 255, constrain(modes[17].brightness - (long)modes[17].speed * modes[17].brightness / 255 * 1 / 2, 1, 255));
   }
 }
 
