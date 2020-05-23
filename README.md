@@ -5,7 +5,7 @@ GyverLamp for Arduino
 This is a lite version of AlexGyver firmware for arduino. 
 (Original here: https://github.com/AlexGyver/GyverLamp/)
 
-## Short description::
+## Short description:
 
 The lamp on the address LEDs, allowing you to get beautiful glow effects:
 
