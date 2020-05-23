@@ -11,7 +11,7 @@ The lamp on the address LEDs, allowing you to get beautiful glow effects:
 Removed from the original:
 
 - alarm clock;
-- work with Wi-Fi (the arduinka does not have it);
+- work with Wi-Fi (the arduino nano does not have it);
 - effect "Fireflies" - there was not enough space in RAM for it;
 - What is added (oddly enough, but yes, there was something to add):
 
