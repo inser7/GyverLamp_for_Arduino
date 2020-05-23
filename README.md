@@ -1,18 +1,27 @@
 ﻿# GyverLamp for Arduino 
 
-Это облегченная версия прошивки AlexGyver под ардуино.
-(Оригинал здесь: ![Исходная версия](https://github.com/AlexGyver/GyverLamp/))
+GyverLamp for Arduino
+This is a lite version of AlexGyver firmware for arduino. 
+(Original here: ![Исходная версия](https://github.com/AlexGyver/GyverLamp/))
 
-## Краткое описание:
+## Short description::
 
-Лампа на адресных светодиодах, позволяющих получить красивые эффекты свечения:
+The lamp on the address LEDs, allowing you to get beautiful glow effects:
 
-Из оригинала было убрано:
-- 	будильник;
-- 	работа с Wi-Fi (у ардуинки его нет);
-- 	эффект "Светляки" - под него не хватило места в ОЗУ;
+Removed from the original:
 
-Что добавлено (как ни странно, но да, было что добавить):
+- alarm clock;
+- work with Wi-Fi (the arduinka does not have it);
+- effect "Fireflies" - there was not enough space in RAM for it;
+- What is added (oddly enough, but yes, there was something to add):
+
+
+## v1.0
+- 	the effect of "Fireflies" is replaced by "White Lamp";
+- 	saving settings for all effects, including current mode in non-volatile memory. It is made five times by pressing a button, the confirmation will be turning off and on the lamp;
+- 	adjusting the speed of effects by double-clicking and holding the button for a second press;
+- 	adjusting the scale of effects by triple pressing and holding the button for the third press;
+- 	indication of brightness / speed / scale with a vertical strip of red / green / blue, respectively;
 
 ## v1.0
 - 	эффект "Светляки" заменен на "Белая лампа";
@@ -26,17 +35,4 @@
 - 	индикация уровня яркости/скорости/масштаба вертикальной полосой	красного/
 	зеленого/синего цветов соответственно;
 
-## v1.2
--   переделан код под обновленный оригинал библиотеки GyverButton; 
--	режим огня сделан "пышнее".
-
-Регулировка уровня яркости/скорости/масштаба реверсивная, т.е. при повторном
-регулировании изменения будут производиться в обратную сторону (сначала в бОльшую,
-затем в мЕньшую).
-
-
-Для работы всех режимов кнопки (ТОЛЬКО для версии GyverLamp_v1.4_Arduino_v1.0)
-ОБЯЗАТЕЛЬНО нужно заменить у себя папку GyverButton на аналогичную с этого сайта. 
-Совместимость с оригиналом сохранилась.
-
-Подключение ардуино производить к тем же пинам, что и esp8266 (конпка - D4, DIN - D2).
+fork for my 1 strip modification
